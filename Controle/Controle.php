@@ -90,9 +90,11 @@
         function verificar($usuario){
             try{
                 $conexao = new Conexao();
-                $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuarios WHERE usuario = :usuario && senha = :senha;");
-                $cmd->bindParam(":usuario",$usuario->getUsuario());
-                $cmd->bindParam(":senha",md5($usuario->getSenha()));
+                $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuarios WHERE email = :e && senha = :s;");
+                $email = $usuario->getEmail();
+                $senha = hash("sha512",$usuario->getSenha());
+                $cmd->bindParam(":e", $email);
+                $cmd->bindParam(":s", $senha);
                 $cmd->execute();
                 if($cmd->rowCount() == 1){
                     $conexao->fecharConexao();
@@ -123,10 +125,10 @@
                 }else{
                     $cmd = $conexao->getConexao()->prepare("INSERT INTO usuarios (nome,email,senha) VALUES(:n,:e,:s);");
                     $nome = $usuario->getNome();
-                    $senha = hash("sha512",$usuario->getSenha());
+                    $senha = hash("sha512", $usuario->getSenha());
                     $cmd->bindParam("n", $nome);
-                    $cmd->bindParam("e",$email);
-                    $cmd->bindParam("s",$senha);
+                    $cmd->bindParam("e", $email);
+                    $cmd->bindParam("s", $senha);
                     if($cmd->execute()){
                             $conexao->fecharConexao();
                             return true;

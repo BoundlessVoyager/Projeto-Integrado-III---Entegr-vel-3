@@ -1,18 +1,18 @@
 <?php
-    //session_start();
+    session_start();
 	require_once('Controle.php');
 	require_once('../Modelo/Usuario.php');
 	try{
         $usuario = new Usuario();
-        $usuario->setUsuario($_POST['usuario']);
+        $usuario->setEmail($_POST['email']);
         $usuario->setSenha($_POST['senha']);
         $control = new ControleUsuario();
         if($control->verificar($usuario)){
-            $_SESSION['Pdo'] = $control->buscarDados($usuario);
-            $_SESSION['login'] = $_POST['usuario'];
-            header("Location: ../Pdo_aqui.php");
+            $_SESSION['login'] = "Login efetuado.";
+            header("Location: ../index.html");
         }else{
-        	echo "<script>alert('Erro na verificação!'); history.back();</script>";
+        	$_SESSION['login'] = "Login negado.";
+            header("Location: ../login.php");
         }
     }catch(Exception $e){
         echo "Erro: $e->getMessage()";

@@ -12,7 +12,7 @@
     <div>
         <div>
             <h1>Já possui conta?</h1>
-            <a href="#"><button>Faça login</button></a>
+            <a href="login.php"><button>Faça login</button></a>
         </div>
         <form action="Controle/CadastroUsuario.php" method="POST">
             <h1>Criar Conta</h1>
@@ -20,7 +20,7 @@
             <input type="text" name="nome" placeholder="Nome" required><br >
             <input type="email" name="email" placeholder="E-mail" required><br >
             <input type="password" name="senha" placeholder="Senha" required><br >
-            <input type="submit">
+            <input type="submit" value="Registre-se">
         </form>
     </div>
     <?php
