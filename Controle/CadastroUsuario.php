@@ -14,10 +14,11 @@
             //$_SESSION['Pdo'] = $control->buscarDados($usuario);
             //$_SESSION['login'] = $_POST['usuario'];
             //header("Location: ../Pdo_aqui.php");
-
-            echo "<h1>Tudo certo!</h1>";
+            $_SESSION['cadastro'] = "Cadastro realizado com sucesso!!!";
+            header("Location: ../cadastro.php");
         }else{
-            echo "<h1>Error</h1>";
+            $_SESSION['cadastro'] = "Usuário já existe na base de dados.";
+            header("Location: ../cadastro.php");
         }
         
     }catch(Exception $e){

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,5 +23,11 @@
             <input type="submit">
         </form>
     </div>
+    <?php
+        if(isset($_SESSION['cadastro'])){
+            echo "<h2>".$_SESSION['cadastro']."</h3>";
+            session_destroy();
+        }
+    ?>
 </body>
 </html>
