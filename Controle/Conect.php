@@ -3,7 +3,7 @@ class Conexao{
     private $conexao;
     function __construct(){
         $host = "localhost"; // Onde o SGBD está?
-        $user =  ""; // Quem irá conectar?
+        $user =  "root"; // Quem irá conectar?
         $pwd = ""; // Senha do usuário
         $bd = "consultorio"; // Base de dados usada
         try{
