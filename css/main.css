@@ -61,3 +61,44 @@
 
 }
 
+.apresentacao-inicio {
+    height: 605px;
+    background-color: #DCE9E2;
+
+}
+
+.apresentacao-inicio #img-doutores {
+    width: 503px;
+    height: 603px;
+    padding-left: 300px;
+    
+}
+
+.msg-boas-vindas {
+    font-size: 32px;
+    text-align: center;
+    padding: 50px;
+    vertical-align: 128px;
+
+}
+
+.msg-boas-vindas #bem-vindo {
+    font-size: 38px;
+    
+}
+
+.msg-boas-vindas #frase-bem-vindo {
+    font-size: 48px;
+    font-weight: bold;
+
+}
+
+#saude-destacado {
+    color: #009696;
+
+}
+
+.msg-boas-vindas, #img-doutores {
+    display: inline-block;
+
+}
