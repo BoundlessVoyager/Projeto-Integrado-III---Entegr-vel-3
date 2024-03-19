@@ -8,7 +8,7 @@
         $usuario->setSenha($_POST['senha']);
         $control = new ControleUsuario();
         if($control->verificar($usuario)){
-            $_SESSION['login'] = "Login efetuado.";
+            $_SESSION['login'] = $_POST['email'];
             header("Location: ../index.html");
         }else{
         	$_SESSION['login'] = "Login negado.";

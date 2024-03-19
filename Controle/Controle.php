@@ -1,6 +1,6 @@
 <?php
     require_once("Conect.php");
-    //require_once("Modelo/Usuario.php");
+    
     class ControleUsuario{
 
         //Seleciona toda tabela
@@ -21,20 +21,20 @@
 
         //Seleciona uma pessoa específica
 
-        /*function selecionarPid($id){
+        function dados($email){
             try{
                 $conexao = new Conexao();   
-                $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuario WHERE id=:id;");
-                $cmd->bindParam("id", $id);
+                $cmd = $conexao->getConexao()->prepare("SELECT nome, data_de_nascimento, genero, telefone, email FROM usuarios WHERE email=:e;");
+                $cmd->bindParam(":e", $email);
                 $cmd->execute();
-                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+                $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                 return $resultado;
             }catch(PDOException $e){
                 echo "Erro no banco: {$e->getMessage()}";
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
             }
-        }*/
+        }
 
         
         //Atualiza a tabela
@@ -67,23 +67,6 @@
         }*/
 
 
-        //Retorna a tabela em array
-
-        /*function buscarDados($usuario) {
-            try{
-                $conexao = new Conexao();
-                $cmd = $conexao->getConexao()->prepare("SELECT id FROM usuarios WHERE usuario=:usuario;");
-                $cmd->bindParam(":usuario",$usuario->getUsuario());
-                $cmd->execute();
-                $res = $cmd->fetch(PDO::FETCH_ASSOC);
-                return $res;
-                $conexao->fecharConexao();
-            }catch(PDOException $e){
-                echo "ERRO do (buscarDados do) banco:{$e->getMessage()}";
-            }catch(Exception $e){
-                echo "ERRO (buscarDados) geral:{$e->getMessage()}";
-            }
-        }*/
 
         //Verifica se existe na tabela
 
