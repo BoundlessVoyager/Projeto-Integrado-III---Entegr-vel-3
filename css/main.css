@@ -62,15 +62,16 @@
 }
 
 .apresentacao-inicio {
-    height: 605px;
+    height: 805px;
     background-color: #DCE9E2;
 
 }
 
-.apresentacao-inicio #img-doutores {
+#img-doutores {
     width: 503px;
     height: 603px;
     padding-left: 300px;
+    vertical-align: -150px;
     
 }
 
@@ -78,6 +79,8 @@
     font-size: 32px;
     text-align: center;
     padding: 50px;
+    padding-left: 150px;
+    padding-top: 100px;
     vertical-align: 128px;
 
 }
@@ -100,5 +103,82 @@
 
 .msg-boas-vindas, #img-doutores {
     display: inline-block;
+    vertical-align: left;
 
+}
+
+#titulo-quem-somos, #texto-quem-somos {
+    display: inline-block;
+}
+
+.quem-somos {
+    height: 400px;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#titulo-quem-somos {
+    padding-right: 500px;
+    font-size: 60px;
+    text-align: center;
+}
+
+#texto-quem-somos{
+    font-size: 25px;
+    text-align: justify;
+}
+
+.contato {
+    position: relative;
+    height: 400px;
+    background-color: #DCE9E2;
+}
+
+.contatos {
+    position: absolute;
+    text-align: center;
+    top: 30%;
+    left: 15%;
+}
+
+#endereco-vitalis, #email-vitalis, #duvidas {
+    font-size: 22px;
+}
+
+.contatos img {
+    height: 78px;
+    width: 345px;
+}
+
+#titulo-contato {
+    font-size: 60px;
+    text-align: right;
+    padding-top: 10%;
+    padding-right: 20%;
+}
+
+.rodape {
+    height: 200px;
+    position: relative;
+}
+
+.rodape-home-page {
+    position: absolute;
+    text-align: center;
+    left: 40%;
+}
+
+#texto-rodape {
+    font-size: 30px;
+    
+    
+}
+
+#vitalis-face, #vitalis-insta {
+    width: 55px;
+    height: 46px;
+    
 }
