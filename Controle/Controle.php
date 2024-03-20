@@ -1,6 +1,6 @@
 <?php
     require_once("Conect.php");
-    //require_once("Modelo/Usuario.php");
+    
     class ControleUsuario{
 
         //Seleciona toda tabela
@@ -21,39 +21,40 @@
 
         //Seleciona uma pessoa específica
 
-        /*function selecionarPid($id){
+        function dados($email){
             try{
                 $conexao = new Conexao();   
-                $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuario WHERE id=:id;");
-                $cmd->bindParam("id", $id);
+                $cmd = $conexao->getConexao()->prepare("SELECT idUser, nome, data_de_nascimento, genero, telefone, email FROM usuarios WHERE email=:e;");
+                $cmd->bindParam(":e", $email);
                 $cmd->execute();
-                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+                $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
                 return $resultado;
             }catch(PDOException $e){
                 echo "Erro no banco: {$e->getMessage()}";
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
             }
-        }*/
+        }
 
         
         //Atualiza a tabela
 
-        /*function atualizar($id, $usuario){
+        function atualizar($usuario){
             try{
                 $conexao = new Conexao();
+                $id = $usuario->getId();
                 $nome = $usuario->getNome();
-                $user = $usuario->getUsuario();
-                $email = $usuario->getEmail();
+                $data_de_nascimento = $usuario->getData_de_nascimento();
+                $genero = $usuario->getGenero();
                 $telefone = $usuario->getTelefone();
-                $senha = $usuario->getSenha();
-                $cmd = $conexao->getConexao()->prepare("UPDATE usuario SET nome = :n, usuario = :u, email = :e, telefone = :t,senha = :s WHERE id=:id;");
+                $email = $usuario->getEmail();
+                $cmd = $conexao->getConexao()->prepare("UPDATE usuarios SET nome = :n, data_de_nascimento = :d, genero = :g, telefone = :t, email = :e WHERE idUser=:id;");
                 $cmd->bindParam("id", $id);
                 $cmd->bindParam("n", $nome);
-                $cmd->bindParam("u", $user);
-                $cmd->bindParam("e", $email);
-                $cmd->bindParam("t", $telefone);
-                $cmd->bindParam("s", md5($senha));              
+                $cmd->bindParam("d", $data_de_nascimento);
+                $cmd->bindParam("g", $genero);
+                $cmd->bindParam("t", $telefone);   
+                $cmd->bindParam("e", $email);           
                 if($cmd->execute()){
                     return true;
                 }else{
@@ -64,26 +65,9 @@
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
 	            }
-        }*/
+        }
 
 
-        //Retorna a tabela em array
-
-        /*function buscarDados($usuario) {
-            try{
-                $conexao = new Conexao();
-                $cmd = $conexao->getConexao()->prepare("SELECT id FROM usuarios WHERE usuario=:usuario;");
-                $cmd->bindParam(":usuario",$usuario->getUsuario());
-                $cmd->execute();
-                $res = $cmd->fetch(PDO::FETCH_ASSOC);
-                return $res;
-                $conexao->fecharConexao();
-            }catch(PDOException $e){
-                echo "ERRO do (buscarDados do) banco:{$e->getMessage()}";
-            }catch(Exception $e){
-                echo "ERRO (buscarDados) geral:{$e->getMessage()}";
-            }
-        }*/
 
         //Verifica se existe na tabela
 
@@ -155,20 +139,39 @@
                 echo "ERRO (cadastrarPessoa) geral:{$e->getMessage()}";
             }
         }
-        /*function agenda($id){
+
+
+        function agendar($agenda){
             try{
                 $con = new Conexao();   
-                $cmd = $con->getConexao()->prepare("SELECT historico.id,livros.nome,livros.genero,livros.valor, pag.pag FROM usuario join historico on usuario.id=historico.idUsuario join livros on livros.id=historico.idlivro join pag on pag.id=historico.idPag WHERE idUsuario=:id;");
-                $cmd->bindParam("id", $id);
-                $cmd->execute();
-                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
-                return $resultado;
+                $cmd = $con->getConexao()->prepare("INSERT INTO agenda (idUser, medico, especialidade, data_da_consulta, forma_de_consulta, motivo) VALUES(:iu, :md, :e, :d, :f, :mt);");
+
+                $idUser = $agenda->getIdUser();
+                $medico = $agenda->getMedico();
+                $especialidade = $agenda->getEspecialidade();
+                $data_da_consulta = $agenda->getData_da_consulta();
+                $forma_de_consulta = $agenda->getForma_de_consulta();
+                $motivo = $agenda->getMotivo();
+
+                $cmd->bindParam("iu", $idUser);
+                $cmd->bindParam("md", $medico);
+                $cmd->bindParam("e", $especialidade);
+                $cmd->bindParam("d", $data_da_consulta);
+                $cmd->bindParam("f", $forma_de_consulta);
+                $cmd->bindParam("mt", $motivo);
+                if($cmd->execute()){
+                    $con->fecharConexao();
+                    return true;
+                }else{
+                    $con->fecharConexao();
+                    return false;
+                }
             }catch(PDOException $e){
                 echo "Erro no banco: {$e->getMessage()}";
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
             }
-        }*/
+        }
 
     }
 ?>
