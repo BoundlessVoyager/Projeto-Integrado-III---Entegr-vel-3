@@ -10,30 +10,31 @@
 </head>
 <body>
     <div>
-        <form action="#" method="POST">
+        <form action="Controle/DadosAgendamento1.php" method="POST">
             <h1>Formulário de Agendamento</h1>
             <h3>Dados Pessoais</h3>
 
             <label for="Nome">Nome: </label>
-            <input type="text" name="nome" value="<?php echo $dados["nome"]; ?>" placeholder="Ex: Luiz" required><br >
+            <input type="text" name="nome" value="<?php echo $dados["nome"]; ?>" placeholder="Ex: Luiz" required></input><br >
 
             <label for="Data de nascimento">Data de nascimento: </label>
-            <input type="data" name="data de nascimento" value="<?php echo $dados["data_de_nascimento"]; ?>" placeholder="(dd/mm/aaaa)" required>
+            <input type="data" name="data_de_nascimento" value="<?php echo $dados["data_de_nascimento"]; ?>" placeholder="(dd/mm/aaaa)" required></input>
 
             <label for="Gênero">Gênero: </label>
             
-            <select name="gênero">
+            <select name="genero">
                 <option value=""></option>
                 <option value="Masculino">Masculino</option>
                 <option value="Femenino">Femenino</option>
             </select><br >
 
             <label for="Telefone">Telefone: </label>
-            <input type="tel" value="<?php echo $dados["telefone"]; ?>" name="telefone" required>
+            <input type="tel" value="<?php echo $dados["telefone"]; ?>" name="telefone" required></input>
 
             <label for="Email">E-mail: </label>
-            <input type="email" value="<?php echo $dados["email"]; ?>" name="email" required><br >
+            <input type="email" value="<?php echo $dados["email"]; ?>" name="email" required></input><br >
             <input type="checkbox" name="notificação">Receber notificação no e-mail</input><br >
+            <input type="hidden" name="id" value="<?php echo $dados["idUser"]; ?>">
 
             <input type="submit" value="Próximo">
         </form>

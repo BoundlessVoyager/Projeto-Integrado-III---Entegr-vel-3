@@ -4,9 +4,9 @@ CREATE DATABASE IF NOT EXISTS  consultorio;
 CREATE TABLE consultorio.usuarios(
 	idUser INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR (60),
-	data_de_nascimento DATE,
-	genero VARCHAR(1),
-	telefone INT(11),
+	data_de_nascimento VARCHAR(10),
+	genero VARCHAR(9),
+	telefone VARCHAR(11),
 	email VARCHAR(50) UNIQUE NOT NULL,
 	senha VARCHAR (128) NOT NULL
 );

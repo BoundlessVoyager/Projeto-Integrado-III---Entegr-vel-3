@@ -24,7 +24,7 @@
         function dados($email){
             try{
                 $conexao = new Conexao();   
-                $cmd = $conexao->getConexao()->prepare("SELECT nome, data_de_nascimento, genero, telefone, email FROM usuarios WHERE email=:e;");
+                $cmd = $conexao->getConexao()->prepare("SELECT idUser, nome, data_de_nascimento, genero, telefone, email FROM usuarios WHERE email=:e;");
                 $cmd->bindParam(":e", $email);
                 $cmd->execute();
                 $resultado = $cmd->fetch(PDO::FETCH_ASSOC);
@@ -39,21 +39,22 @@
         
         //Atualiza a tabela
 
-        /*function atualizar($id, $usuario){
+        function atualizar($usuario){
             try{
                 $conexao = new Conexao();
+                $id = $usuario->getId();
                 $nome = $usuario->getNome();
-                $user = $usuario->getUsuario();
-                $email = $usuario->getEmail();
+                $data_de_nascimento = $usuario->getData_de_nascimento();
+                $genero = $usuario->getGenero();
                 $telefone = $usuario->getTelefone();
-                $senha = $usuario->getSenha();
-                $cmd = $conexao->getConexao()->prepare("UPDATE usuario SET nome = :n, usuario = :u, email = :e, telefone = :t,senha = :s WHERE id=:id;");
+                $email = $usuario->getEmail();
+                $cmd = $conexao->getConexao()->prepare("UPDATE usuarios SET nome = :n, data_de_nascimento = :d, genero = :g, telefone = :t, email = :e WHERE idUser=:id;");
                 $cmd->bindParam("id", $id);
                 $cmd->bindParam("n", $nome);
-                $cmd->bindParam("u", $user);
-                $cmd->bindParam("e", $email);
-                $cmd->bindParam("t", $telefone);
-                $cmd->bindParam("s", md5($senha));              
+                $cmd->bindParam("d", $data_de_nascimento);
+                $cmd->bindParam("g", $genero);
+                $cmd->bindParam("t", $telefone);   
+                $cmd->bindParam("e", $email);           
                 if($cmd->execute()){
                     return true;
                 }else{
@@ -64,7 +65,7 @@
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
 	            }
-        }*/
+        }
 
 
 
