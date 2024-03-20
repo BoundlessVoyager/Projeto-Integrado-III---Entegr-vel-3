@@ -139,20 +139,39 @@
                 echo "ERRO (cadastrarPessoa) geral:{$e->getMessage()}";
             }
         }
-        /*function agenda($id){
+
+
+        function agendar($agenda){
             try{
                 $con = new Conexao();   
-                $cmd = $con->getConexao()->prepare("SELECT historico.id,livros.nome,livros.genero,livros.valor, pag.pag FROM usuario join historico on usuario.id=historico.idUsuario join livros on livros.id=historico.idlivro join pag on pag.id=historico.idPag WHERE idUsuario=:id;");
-                $cmd->bindParam("id", $id);
-                $cmd->execute();
-                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
-                return $resultado;
+                $cmd = $con->getConexao()->prepare("INSERT INTO agenda (idUser, medico, especialidade, data_da_consulta, forma_de_consulta, motivo) VALUES(:iu, :md, :e, :d, :f, :mt);");
+
+                $idUser = $agenda->getIdUser();
+                $medico = $agenda->getMedico();
+                $especialidade = $agenda->getEspecialidade();
+                $data_da_consulta = $agenda->getData_da_consulta();
+                $forma_de_consulta = $agenda->getForma_de_consulta();
+                $motivo = $agenda->getMotivo();
+
+                $cmd->bindParam("iu", $idUser);
+                $cmd->bindParam("md", $medico);
+                $cmd->bindParam("e", $especialidade);
+                $cmd->bindParam("d", $data_da_consulta);
+                $cmd->bindParam("f", $forma_de_consulta);
+                $cmd->bindParam("mt", $motivo);
+                if($cmd->execute()){
+                    $con->fecharConexao();
+                    return true;
+                }else{
+                    $con->fecharConexao();
+                    return false;
+                }
             }catch(PDOException $e){
                 echo "Erro no banco: {$e->getMessage()}";
             }catch(Exception $e){
                 echo "Erro geral: {$e->getMessage()}";
             }
-        }*/
+        }
 
     }
 ?>

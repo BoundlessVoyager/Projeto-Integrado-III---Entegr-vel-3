@@ -15,10 +15,10 @@
             <h3>Dados Pessoais</h3>
 
             <label for="Nome">Nome: </label>
-            <input type="text" name="nome" value="<?php echo $dados["nome"]; ?>" placeholder="Ex: Luiz" required></input><br >
+            <input type="text" name="nome" value="<?php echo $dados["nome"]; ?>" placeholder="Ex: Luiz" required><br >
 
             <label for="Data de nascimento">Data de nascimento: </label>
-            <input type="data" name="data_de_nascimento" value="<?php echo $dados["data_de_nascimento"]; ?>" placeholder="(dd/mm/aaaa)" required></input>
+            <input type="data" name="data_de_nascimento" value="<?php echo $dados["data_de_nascimento"]; ?>" placeholder="(dd/mm/aaaa)" required>
 
             <label for="Gênero">Gênero: </label>
             
@@ -29,10 +29,10 @@
             </select><br >
 
             <label for="Telefone">Telefone: </label>
-            <input type="tel" value="<?php echo $dados["telefone"]; ?>" name="telefone" required></input>
+            <input type="tel" value="<?php echo $dados["telefone"]; ?>" name="telefone" required>
 
             <label for="Email">E-mail: </label>
-            <input type="email" value="<?php echo $dados["email"]; ?>" name="email" required></input><br >
+            <input type="email" value="<?php echo $dados["email"]; ?>" name="email" required><br >
             <input type="checkbox" name="notificação">Receber notificação no e-mail</input><br >
             <input type="hidden" name="id" value="<?php echo $dados["idUser"]; ?>">
 

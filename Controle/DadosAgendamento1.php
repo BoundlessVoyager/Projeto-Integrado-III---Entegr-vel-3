@@ -3,7 +3,6 @@
 
 	require_once('Controle.php');
 	require_once('../Modelo/Usuario.php');
-    //require_once('DadosUsuario.php');
         
 	try{
         $usuario = new Usuario();
