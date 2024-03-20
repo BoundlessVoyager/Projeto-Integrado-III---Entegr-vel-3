@@ -1,184 +1,230 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* HEADER */
+
 .menu-principal {
-    max-height: 100px;
-    background-color: white; 
-    color: black; 
-    padding: 20px; 
-    display: flex;
-    justify-content: center;
+  max-height: 100px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .header-1 {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .titulo-website {
-    padding-right: 50px;
-    font-family: Arial;
-    color: #464646;
+  padding-right: 50px;
+  font-family: Arial;
+  color: #464646;
 }
 
 .logo {
-    display: flex; 
-    align-items: center; 
+  display: flex;
+  align-items: center;
 }
 
 .logo img {
-    width: 50px; 
-    margin-right: 10px; 
+  width: 50px;
+  margin-right: 10px;
 }
 
 .logo h1 {
-    margin: 0; 
-    font-size: 24px; 
+  margin: 0;
+  font-size: 24px;
 }
 
 .menu ul {
-    list-style: none; 
-    padding: 0; 
+  list-style: none;
+  padding: 0;
 }
 
 .menu li {
-    display: inline-block; 
-    margin-right: 20px; 
+  display: inline-block;
+  margin-right: 20px;
 }
 
 .menu a {
-    text-decoration: none; 
-    color: dimgray; 
-    font-size: 22px; 
+  text-decoration: none;
+  color: dimgray;
+  font-size: 22px;
 }
 
 .botao .btn {
-    background-color: white; 
-    color: black; 
-    border: none; 
-    padding: 10px 20px; 
-    font-size: 14px; 
-    cursor: pointer; 
-    outline: 1px solid black;
-
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 1px solid black;
 }
 
-.apresentacao-inicio {
-    height: 805px;
-    background-color: #DCE9E2;
+.btn:hover {
+  transition: 0.3s;
+  background-color: #00856f;
+  outline: none;
+  color: white;
+}
 
+.menu a:hover{
+  transition: 0.3s;
+  color: black;
+}
+
+/* APRESENTAÇÃO */
+
+.apresentacao-inicio {
+  gap: 200px;
+  padding-right: 400px;
+  justify-content: center;
+  display: flex;
+  height: 520px;
+  background-color: #dce9e2;
 }
 
 #img-doutores {
-    width: 503px;
-    height: 603px;
-    padding-left: 300px;
-    vertical-align: -150px;
-    
+  width: 420px;
+  height: 476px;
+  position: absolute;
+  top: 21.9%;
 }
 
 .msg-boas-vindas {
-    font-size: 32px;
-    text-align: center;
-    padding: 50px;
-    padding-left: 150px;
-    padding-top: 100px;
-    vertical-align: 128px;
-
+  font-size: 32px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 
-.msg-boas-vindas #bem-vindo {
-    font-size: 38px;
-    
+#bem-vindo {
+  font-size: 26px;
+  align-self: flex-start;
 }
 
-.msg-boas-vindas #frase-bem-vindo {
-    font-size: 48px;
-    font-weight: bold;
+#frase-fim {
+  font-size: 20px;
+}
 
+#frase-bem-vindo {
+  font-size: 48px;
+  font-weight: bold;
 }
 
 #saude-destacado {
-    color: #009696;
-
+  color: #009696;
 }
 
-.msg-boas-vindas, #img-doutores {
-    display: inline-block;
-    vertical-align: left;
-
-}
-
-#titulo-quem-somos, #texto-quem-somos {
-    display: inline-block;
-}
+/* QUEM SOMOS */
 
 .quem-somos {
-    height: 400px;
-    width: 80%;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  margin-top: 15px;
+  background-color: #dce9e2;
+  height: 60vh;
+  width: 98.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 100px;
 }
 
 #titulo-quem-somos {
-    padding-right: 500px;
-    font-size: 60px;
-    text-align: center;
+  font-size: 60px;
+  text-align: center;
+  padding-left: 100px;
 }
 
-#texto-quem-somos{
-    font-size: 25px;
-    text-align: justify;
+.linha-vertical {
+  width: 6px;
+  height: 350px;
+  background-color: white;
+  margin-right: 10px;
 }
+
+#texto-quem-somos {
+  width: 50vw;
+  font-size: 20px;
+  text-align: justify;
+  padding-right: 200px;
+}
+
+/* CONTATO */
 
 .contato {
-    position: relative;
-    height: 400px;
-    background-color: #DCE9E2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  width: 98.5vw;
+  height: 400px;
+  background-color: #dce9e2;
+  gap: 200px;
 }
 
-.contatos {
-    position: absolute;
-    text-align: center;
-    top: 30%;
-    left: 15%;
+#endereco-vitalis,
+#email-vitalis,
+#duvidas {
+  font-size: 22px;
+  margin-top: 20px;
 }
 
-#endereco-vitalis, #email-vitalis, #duvidas {
-    font-size: 22px;
+#duvidas {
+  text-align: center;
 }
 
 .contatos img {
-    height: 78px;
-    width: 345px;
+  margin-top: 20px;
+  height: 70px;
+  width: 300px;
 }
 
 #titulo-contato {
-    font-size: 60px;
-    text-align: right;
-    padding-top: 10%;
-    padding-right: 20%;
+  font-size: 60px;
+  text-align: right;
+  padding-top: 10%;
+  padding-right: 20%;
 }
 
+/* FOOTER */
+
 .rodape {
-    height: 200px;
-    position: relative;
+  margin-top: 15px;
+  background-color: #dce9e2;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .rodape-home-page {
-    position: absolute;
-    text-align: center;
-    left: 40%;
+  text-align: center;
 }
 
 #texto-rodape {
-    font-size: 30px;
-    
-    
+  font-size: 30px;
 }
 
-#vitalis-face, #vitalis-insta {
-    width: 55px;
-    height: 46px;
-    
+#vitalis-face,
+#vitalis-insta {
+  width: 55px;
+  height: 46px;
 }
