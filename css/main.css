@@ -83,7 +83,7 @@ body {
   color: white;
 }
 
-.menu a:hover{
+.menu a:hover {
   transition: 0.3s;
   color: black;
 }
@@ -92,7 +92,6 @@ body {
 
 .apresentacao-inicio {
   gap: 200px;
-  padding-right: 400px;
   justify-content: center;
   display: flex;
   height: 520px;
@@ -101,12 +100,16 @@ body {
 
 #img-doutores {
   width: 420px;
-  height: 476px;
-  position: absolute;
-  top: 21.9%;
+  height: auto;
+}
+
+.container-doutores {
+  margin-top: auto;
+  margin-bottom: -4px;
 }
 
 .msg-boas-vindas {
+  min-width: 410px;
   font-size: 32px;
   text-align: center;
   display: flex;
@@ -139,7 +142,7 @@ body {
 .quem-somos {
   margin-top: 15px;
   background-color: #dce9e2;
-  height: 60vh;
+  height: 400px;
   width: 98.5vw;
   display: flex;
   align-items: center;
@@ -161,7 +164,8 @@ body {
 }
 
 #texto-quem-somos {
-  width: 50vw;
+  max-width: 800px;
+  min-width: 600px;
   font-size: 20px;
   text-align: justify;
   padding-right: 200px;
