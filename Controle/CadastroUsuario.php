@@ -12,10 +12,12 @@
         $control = new ControleUsuario();
         if($control->cadastrarPessoa($usuario)){
             $_SESSION['cadastro'] = "Cadastro realizado com sucesso!!!";
+            header("Location: ../login.html");
         }else{
             $_SESSION['cadastro'] = "Usuário já existe na base de dados.";
+            header("Location: ../cadastro.html");
         }
-        header("Location: ../cadastro.php");
+        
 
     }catch(Exception $e){
         echo "Erro: $e->getMessage()";
