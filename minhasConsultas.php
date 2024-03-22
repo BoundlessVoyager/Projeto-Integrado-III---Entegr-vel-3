@@ -15,4 +15,6 @@
 <body>
     
 </body>
+<script src='js/sweetAlert.js'></script>
+<script>swal('Atenção','Apagou!','warning');</script>
 </html>

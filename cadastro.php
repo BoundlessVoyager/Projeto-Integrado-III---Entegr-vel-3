@@ -29,7 +29,7 @@
                     <?php
                         if(isset($_SESSION['cadastro'])){
                             echo "<small>".$_SESSION['cadastro']."</small>";
-                            session_destroy();
+                            unset($_SESSION['cadastro']);
                         }
                     ?>
                     <button class="button-form">Registre-se</button>

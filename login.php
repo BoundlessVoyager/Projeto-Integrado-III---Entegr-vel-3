@@ -22,11 +22,11 @@
                     <?php
                         if(isset($_SESSION['cadastro'])){
                             echo "<small>".$_SESSION['cadastro']."</small>";
-                            session_destroy();
+                            unset($_SESSION['cadastro']);
                         }
                         if(isset($_SESSION['login'])){
                             echo "<small>E-mail ou senha incorreto.</small>";
-                            session_destroy();
+                            unset($_SESSION['login']);
                         }
                     ?>
                     <button class="button-form">Registre-se</button>
