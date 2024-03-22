@@ -9,9 +9,9 @@
         $control = new ControleUsuario();
         if($control->verificar($usuario)){
             $_SESSION['login'] = $_POST['email'];
-            header("Location: ../index.html");
+            header("Location: ../index.php");
         }else{
-        	$_SESSION['login'] = "Login negado.";
+        	$_SESSION['login'] = "E-mail ou senha incorreto.";
             header("Location: ../login.php");
         }
     }catch(Exception $e){

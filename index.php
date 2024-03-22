@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -23,17 +26,23 @@
                 
                 <div class="menu">
                     <ul>
-                        <li><a href="./index.html" > Início </a></li>
+                        <li><a href="./index.php" > Início </a></li>
                         <li><a href="#apresentacao-quem-somos" > Quem somos </a></li>
                         <li><a href="#apresentacao-contato" > Contato </a> </li>
                         <li><a href="" > Médicos </a></li>
 
                     </ul>
                 </div>
-
-                <div class="botao">
-                    <button onclick="fazerLogin()" class="btn"> Fazer Login </button>
+        <?php
+            if(!isset($_SESSION['login'])){
+                echo "
+                <div class='botao'>
+                    <button onclick='fazerLogin()' class='btn'> Fazer Login </button>
                 </div>
+                ";
+            }
+        ?>
+        
             </div>
     </header>
 

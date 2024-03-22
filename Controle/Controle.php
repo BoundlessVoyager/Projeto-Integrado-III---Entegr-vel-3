@@ -76,7 +76,7 @@
                 $conexao = new Conexao();
                 $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuarios WHERE email = :e && senha = :s;");
                 $email = $usuario->getEmail();
-                $senha = hash("sha512",$usuario->getSenha());
+                $senha = hash("sha512", $usuario->getSenha());
                 $cmd->bindParam(":e", $email);
                 $cmd->bindParam(":s", $senha);
                 $cmd->execute();
