@@ -51,7 +51,6 @@ body {
 form {
   display: flex;
   flex-direction: column;
-  border-radius: 3px;
 }
 
 .container-form {
@@ -62,14 +61,14 @@ form {
 }
 
 .container-form input {
-  border: 1px solid #000;
+  border: 1px solid #0000007a;
   padding: 2.5px;
   width: 200px;
   border-radius: 3px;
 }
 
 .button-form {
-  padding: 4px 25px;
+  padding: 4px 45px;
   background-color: #00856f;
   border-radius: 3px;
   border: none;
@@ -113,7 +112,7 @@ form {
   transition: 0.3s;
 }
 
-.button-form:hover{
+.button-form:hover {
   color: #00856f;
   background-color: #ffffff;
   box-shadow: inset 0 0 0 1px #00856f;
