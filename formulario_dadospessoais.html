@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style_formulario_dadospessoais.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container-header">
+        <div class="logo">
+          <img src="../img/logo.png" alt="Logo Vitalis" />
+          <h1 class="titulo-website">Vitalis</h1>
+        </div>
+
+        <div class="progress-bar">
+          <div class="progress" id="progress">
+            <p id="stepText">1/3</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="titulo-form">
+      <h1>Formulário de Agendamento</h1>
+    </div>
+
+    <div class="container">
+      <form class="container-form">
+        <span id="data">Dados Pessoais</span>
+
+        <div class="form">
+          <label for="">*Nome:</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="size-input"
+            placeholder="Ex: Luiz"
+          />
+        </div>
+
+        <div class="form">
+          <label for="">*Sobrenome:</label>
+          <input
+            type="text"
+            name=""
+            id=""
+            class="size-input"
+            placeholder="Ex: Pereira"
+          />
+        </div>
+
+        <div class="form">
+          <label for="">*Data de nascimento:</label>
+          <input
+            type="date"
+            name=""
+            id=""
+            class="size-input"
+            placeholder="(dd/mm/aaaa)"
+          />
+        </div>
+
+        <div class="form">
+          <label for="">*Gênero:</label>
+          <select name="" id="">
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+          </select>
+        </div>
+
+        <div class="form">
+          <label for="">*Telefone:</label>
+          <input
+            type="tel"
+            name=""
+            id=""
+            class="size-input"
+            placeholder="(ddd) (xxxxxxxxx)"
+          />
+        </div>
+
+        <div class="form">
+          <label for="">*E-mail:</label>
+          <input
+            type="email"
+            name=""
+            id=""
+            class="size-input"
+            placeholder="exemplo@gmail.com"
+          />
+          <p id="notification">
+            <input type="checkbox" name="" id="" />Receber notificação no email
+          </p>
+        </div>
+      </form>
+    </div>
+
+    <div class="buttons">
+      <a href="">
+        <button class="button" id="button-canc">
+          Cancelar
+        </button>
+      </a>
+
+      <a href="/formulario_medico.html">
+        <button class="button" id="button-prox">
+          Próximo
+        </button>
+      </a>
+    </div>
+
+
+  </body>
+</html>
