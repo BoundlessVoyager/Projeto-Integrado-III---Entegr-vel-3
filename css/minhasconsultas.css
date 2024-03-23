@@ -3,6 +3,37 @@
     float: right;
 } 
 
+.perfil{
+    display: flex;
+	width: 50px;
+	height: 30px;
+	background-color: #00856f;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    cursor: pointer;
+    user-select: none;
+}
+
+#perfil {
+    display: none;
+}
+
+#perfil:checked ~ .perfil{
+		margin-top: 0;
+	}
+	.perfil{
+        margin-top: -100%;
+		transition: all .4s;
+	}
+	.perfil ul li{
+		width: 100%;
+		float: none;
+		list-style: none;
+	}
+
+
+
 .consultas-main {
     display: flex;
     justify-content: center;
@@ -12,9 +43,24 @@
         width: 98%;
         min-height: 100vh;
         border-radius: 10px 10px 0 0;
+
+        .vazio {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            justify-items: center;
+            color: #fff;
+            & div{
+                text-align: center;
+            }
+        }
+
         .consultas-interno {
             display: flex;
             justify-content: center;
+
             .dados {
                 display: flex;
                 align-items: center;
@@ -25,26 +71,39 @@
                 margin-top: 30px;
                 border-radius: 10px;
                 border: solid black 1px;
+                box-shadow: 1px 2px 10px black;
+
                 .dados-pessoais {
                     width: 40%;
                     text-align: left;
                     margin: 5% 0% 5% 10%;
                     
                 }
+
                 .dados-consultas {
                     width: 60%;
                     text-align: left;
                     margin: 5% 0% 5% 10%;
                     
                 }
+
             }
+
         }
+
         .botoes-direita {
+            display: block;  
             height: 50px;
-            width: 250px;
-            margin-right: 3%;
+            width: 400px;
+            margin-right: 0%;
             margin-left: auto;
-            display: flex;  
+            margin-top: 5px;
+
+            .del, .edit{
+                border-radius: 50px;
+                padding: 10px;
+            }
+
         }
     }  
     

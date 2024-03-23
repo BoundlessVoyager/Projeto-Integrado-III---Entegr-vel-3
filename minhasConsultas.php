@@ -1,9 +1,6 @@
 <?php
-    session_start();
-    
-    if(!isset($_SESSION['login'])){
-        header("Location: login.php");    
-    }
+    require_once("Controle/DadosUsuario.php");
+    require_once("Controle/Agenda.php");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,35 +41,56 @@
                 ";
             }
         ?>
-            <img id="user" src="img/perfil.png" alt="imagem de perfil">
+            <input type="checkbox" default="false" name="perfil" id="perfil">
+            <label for="perfil">
+                <img id="user" src="img/perfil.png" alt="imagem de perfil">
+            </label>
+            <div class="perfil" id="sair">
+                Sair
+            </div>
+            
         </div>
     </header>
     
     <main class="consultas-main">
         <div class="consultas-externo">
-            <div class="consultas-interno">
-                <div class="dados">
-                    <div class="dados-pessoais">
-                        <h2>Dados Pessoais</h2>
-                        <p>Nome: José da Silva Sousas</p>
-                        <p>Telefone: (88) 9 1234-5678</p>
-                        <p>E-mail: josesilva@gmail.com</p>
-                        <p>Data de nascimento: 12/09/1978</p>
-                    </div>
-                    <div class="dados-consulta">
-                        <h2>Informações sobre a consulta</h2>
-                        <p>Médico(a): Dra. Camila Silva</p>
-                        <p>Especilidade: Psicologia</p>
-                        <p>Data da consulta: 01/10/2024</p>
-                    </div>
-                    
+    <?php
+        if($cnt == 0){
+            echo "
+            <div class='vazio'>
+                <div>
+                    <h1>Você ainda não possui nenhuma consulta.</h1>
+                    <h3>Acesse a área de médicos para marcar uma consulta!</h3>
                 </div>
-            </div>
-            <div class="botoes-direita">
-                <button>Cancelar Consulta</button>
-                <button>Editar Consulta</button>
-            </div>
-            
+            </div>";
+        }else{
+            for ($i = 0; $i < $cnt; $i++) {
+                echo"
+                <div class='consultas-interno'>
+                    <div class='dados'>
+                        <div class='dados-pessoais'>
+                            <h2>Dados Pessoais</h2>
+                            <p>Nome: {$dados['nome']}</p>
+                            <p>Telefone: {$dados['telefone']}</p>
+                            <p>E-mail: {$dados['email']}</p>
+                            <p>Data de nascimento: {$dados['data_de_nascimento']}</p>
+                        </div>
+                        <div class='dados-consulta'>
+                            <h2>Informações sobre a consulta</h2>
+                            <p>Médico(a): {$agenda[$i]['medico']}</p>
+                            <p>Especilidade: {$agenda[$i]['especialidade']}</p>
+                            <p>Data da consulta: {$agenda[$i]['data_da_consulta']}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class='botoes-direita'>
+                    <button class='del' value='{$agenda[$i]['idAgenda']}'>Cancelar Consulta</button>
+                    <button class='edit' value='{$agenda[$i]['idAgenda']}'>Editar Consulta</button>
+                </div>";
+            }
+        }
+    ?>        
         </div>
     </main>
 

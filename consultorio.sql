@@ -14,7 +14,7 @@ CREATE TABLE consultorio.usuarios(
 CREATE TABLE consultorio.agenda(
 	idAgenda INT PRIMARY KEY AUTO_INCREMENT,
 	idUser INT(8) NOT NULL,
-	medico INT(8) NOT NULL,
+	medico VARCHAR(60) NOT NULL,
 	especialidade VARCHAR(30),
 	data_da_consulta VARCHAR(10) NOT NULL,
 	forma_de_consulta VARCHAR(10) NOT NULL,

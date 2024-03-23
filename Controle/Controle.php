@@ -4,7 +4,6 @@
     class ControleUsuario{
         
         //Seleciona uma pessoa específica
-
         function dados($email){
             try{
                 $conexao = new Conexao();   
@@ -22,7 +21,6 @@
 
         
         //Atualiza a tabela
-
         function atualizar($usuario){
             try{
                 $conexao = new Conexao();
@@ -53,7 +51,6 @@
 
 
         //Verifica se existe na tabela
-
         function verificar($usuario){
             try{
                 $conexao = new Conexao();
@@ -77,8 +74,8 @@
             }
         }
 
-        //Cadastra pessoas
 
+        //Cadastra pessoas
         function cadastrarPessoa($usuario){
             try{
                 $conexao = new Conexao();
@@ -158,16 +155,38 @@
             }
         }
 
-        //Seleciona toda tabela
 
+        // Seleciona toda tabela
         function agenda($idUser){
             try{
                 $con = new Conexao();
                 $cmd = $con->getConexao()->prepare("SELECT * FROM agenda WHERE idUser=:iu;");
-                $cmd->bindParam("ui", $idUser);
+                $cmd->bindParam("iu", $idUser);
                 $cmd->execute();
                 $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
                 return $resultado;
+            }catch(PDOException $e){
+                echo "Erro no banco: {$e->getMessage()}";
+            }catch(Exception $e){
+                echo "Erro geral: {$e->getMessage()}";
+            }
+        }
+
+
+        // Deleta uma consulta
+        function deletarConsulta($idAgenda){
+            try{
+                $con = new Conexao();
+                $cmd = $con->getConexao()->prepare("DELETE FROM agenda WHERE idAgenda=:ia;");
+                $cmd->bindParam("ia", $idAgenda);
+                $cmd->execute();
+                if($cmd->execute()){
+                    $con->fecharConexao();
+                    return true;
+                }else{
+                    $con->fecharConexao();
+                    return false;
+                }
             }catch(PDOException $e){
                 echo "Erro no banco: {$e->getMessage()}";
             }catch(Exception $e){
