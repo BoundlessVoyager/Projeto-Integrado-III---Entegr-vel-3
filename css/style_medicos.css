@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
+
+* {
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fff;
+}
+
+/* HEADER */
+
+.menu-principal {
+  max-height: 100px;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.header-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo-website {
+  padding-right: 50px;
+  font-family: Arial;
+  color: #464646;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: dimgray;
+  font-size: 22px;
+}
+
+.botao .btn {
+  border-radius: 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px 30px;
+  font-size: 14px;
+  cursor: pointer;
+  outline: 1px solid black;
+}
+
+.btn:hover {
+  transition: 0.3s;
+  background-color: #00856f;
+  outline: none;
+  color: white;
+}
+
+.menu a:hover{
+  transition: 0.3s;
+  color: black;
+}
+
+ /* Página médicos */
+.medicos-primeira-parte {
+  height: 520px;
+  background-color: #dce9e2;
+  text-align: center;
+  vertical-align: middle;
+    
+
+}
+
+#texto-conheca-nossos-medicos{
+  font-size: 50px;
+    
+
+}
+
+#texto-vitalis-equipe {
+  font-size: 25px;
+    
+}
+
+.conheca-nossos-medicos {
+  text-align: center;
+  padding: 150px;
+
+
+}
+
+#mais-10 {
+  font-size: 50px;
+}
+
+#especialidades-disponiveis {
+  font-size: 20px;
+}
+
+.linha-pequena-vertical {
+  width: 6px;
+  height: 100px;
+  background-color: white;
+}
+
+#mais-20 {
+  font-size: 50px;
+}
+
+#medicos-atender {
+  font-size: 20px;
+}
+
+.texto-esquerda-primeira-parte, .texto-direita-primeira-parte, .linha-pequena-vertical {
+  text-align: center;
+  display: inline-block;
+  margin: 5px;
+    
+}
+
+/* Segunda parte médicos*/
+.medicos-segunda-parte {
+  margin-top: 10px;
+  height: 110px;
+  background-color: #dce9e2;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+
+}
+
+#txtBusca {
+  position: absolute;
+  border:solid 1px;
+  border-radius:15px;
+  width:335px;
+  height: 40px;
+  font-size: 15px;
+  left: 200px;
+}
+
+#txtBusca::placeholder {
+  padding: 10px;
+
+}
+
+#btnBusca {
+  position: relative;
+  right: 50px;
+  margin: 4px;
+  width: 35px;
+  height: 28px;
+
+}
+
+.especialidade-selecao, .datas-disponiveis, .forma-atendimento {
+  margin: -200px;
+  margin-left: 300px;
+  display: inline-block;
+  
+}
+
+#selecao-especialidades, #data-disponibilidade, #selecao-atendimento {
+  background-color: transparent;
+  font-weight: bold;
+  width: 115px;
+  height: 30px;
+}
+
+.especialidade-selecao img, .datas-disponiveis img, .forma-atendimento img {
+  float: left;
+  width: 30px;
+  height: 40px;
+}
+
+#form-datas {
+  display: inline-block;
+}
+
+/* Terceira parte médicos*/
+.medicos-terceira-parte {
+  margin-top: 10px;
+  height: 620px;
+  background-color: #dce9e2;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+ 
+}
+
+.medico1, .medico2, .medico3 {
+  margin-left: 100px;
+  height: 500px;
+  width: 390px;
+  background-color: white;
+  border-radius: 10%;
+  box-shadow: 15px 10px 10px #808582;
+}
+
+#imagem-psicologa, #imagem-cardiologista, #imagem-dermatologista {
+  height: 366px;
+  width: 390px;
+}
+
+#texto-nome-medico1, #texto-nome-medico2, #texto-nome-medico3 {
+  font-size: 25px;
+}
+
+#btn-agendar-consulta1, #btn-agendar-consulta2, #btn-agendar-consulta3 {  
+  background-color: transparent;
+  margin-top: 5px;
+  width: 150px;
+  height: 25px;
+  font-size: 15px;
+}
+
+#texto-mais-informacoes-medico1, #texto-mais-informacoes-medico2, #texto-mais-informacoes-medico3 {
+  margin-top: 15px;
+}
+
+#texto-mais-informacoes-medico1 a, #texto-mais-informacoes-medico2 a, #texto-mais-informacoes-medico3 a {
+  text-decoration: none;
+  color: dimgray;
+}

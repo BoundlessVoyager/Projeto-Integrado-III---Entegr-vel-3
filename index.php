@@ -29,7 +29,7 @@
                         <li><a href="./index.php" > Início </a></li>
                         <li><a href="#apresentacao-quem-somos" > Quem somos </a></li>
                         <li><a href="#apresentacao-contato" > Contato </a> </li>
-                        <li><a href="" > Médicos </a></li>
+                        <li><a href="medicos.html" > Médicos </a></li>
 
                     </ul>
                 </div>
