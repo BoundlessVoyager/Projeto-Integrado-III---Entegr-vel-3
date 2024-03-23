@@ -6,35 +6,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entre na sua conta</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style_login.css">
 </head>
 <body>
-    <div>
-        <form action="Controle/Login.php" method="POST">
+    <section class="container">
+        <div class="container-login">
             <h1>Entrar</h1>
-            <h3>Use seu e-mail e senha para entrar!</h3>
-            <input type="email" name="email" placeholder="E-mail" required><br >
-            <input type="password" name="senha" placeholder="Senha" required><br >
-            <input type="submit" value="Entrar"><br >
-            <a href="#">Esqueci a senha</a>
-        </form>
-
-        <?php
-            if(isset($_SESSION['login'])){
-                if($_SESSION['login'] == "Login negado."){
-                    echo "<h2>".$_SESSION['login']."</h3>";
-                    session_destroy();
-                }else{
-                    header("Location: index.html");
-                }
-            }
-        ?>
-
-        <div>
-            <h1>Ainda não possui conta?</h1>
-            <a href="cadastro.php"><button>Registre-se</button></a>
+            <p>Use seu email e senha para entrar!</p>
+            
+            <form action="Controle/Login.php" method="post">
+                <div class="container-form">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="senha" id="password" placeholder="Senha" required>
+                    <?php
+                        if(isset($_SESSION['cadastro'])){
+                            echo "<small>".$_SESSION['cadastro']."</small>";
+                            unset($_SESSION['cadastro']);
+                        }
+                        if(isset($_SESSION['login'])){
+                            echo "<small>E-mail ou senha incorreto.</small>";
+                            unset($_SESSION['login']);
+                        }
+                    ?>
+                    <button class="button-form">Registre-se</button>
+                </div>
+                <a href="#">Esqueci minha senha</a>
+            </form>
         </div>
-    </div>
-    
+        
+        <div class="container-cadastro">
+            <h1>Ainda não possui conta?</h1>
+            <a href="cadastro.php"><button class="button-register">Registre-se</button></a>
+        </div>
+    </section> 
 </body>
-</html>
+</html> 

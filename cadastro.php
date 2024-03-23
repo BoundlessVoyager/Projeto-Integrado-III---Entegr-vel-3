@@ -6,28 +6,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crie sua conta</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/style_cadastro.css">
 </head>
 <body>
-    <div>
-        <div>
+    <section class="container">
+        
+        <div class="container-login">
             <h1>Já possui conta?</h1>
-            <a href="login.php"><button>Faça login</button></a>
+            <a href="login.php"><button class="button-login">Faça login</button></a>
         </div>
-        <form action="Controle/CadastroUsuario.php" method="POST">
+
+        <div class="container-cadastro">
             <h1>Criar Conta</h1>
-            <h3>crie sua conta agora</h3>
-            <input type="text" name="nome" placeholder="Nome" required><br >
-            <input type="email" name="email" placeholder="E-mail" required><br >
-            <input type="password" name="senha" placeholder="Senha" required><br >
-            <input type="submit" value="Registre-se">
-        </form>
-    </div>
-    <?php
-        if(isset($_SESSION['cadastro'])){
-            echo "<h2>".$_SESSION['cadastro']."</h3>";
-            session_destroy();
-        }
-    ?>
+            <p>Crie sua conta agora!</p>
+
+            <form action="Controle/CadastroUsuario.php" method="post">
+                <div class="container-form">
+                    <input type="text" placeholder="Nome">
+                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="password" name="senha" id="password" placeholder="Senha" required>
+                    <?php
+                        if(isset($_SESSION['cadastro'])){
+                            echo "<small>".$_SESSION['cadastro']."</small>";
+                            unset($_SESSION['cadastro']);
+                        }
+                    ?>
+                    <button class="button-form">Registre-se</button>
+                </div>
+            </form>
+        </div>
+
+    </section> 
 </body>
-</html>
+</html> 

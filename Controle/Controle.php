@@ -2,23 +2,7 @@
     require_once("Conect.php");
     
     class ControleUsuario{
-
-        //Seleciona toda tabela
-
-        /*function selecionarTodos(){
-            try{
-                $con = new Conexao();
-                $cmd = $con->getConexao()->prepare("SELECT * FROM usuarios;");
-                $cmd->execute();
-                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
-                return $resultado;
-            }catch(PDOException $e){
-                echo "Erro no banco: {$e->getMessage()}";
-            }catch(Exception $e){
-                echo "Erro geral: {$e->getMessage()}";
-            }
-        }*/
-
+        
         //Seleciona uma pessoa específica
 
         function dados($email){
@@ -68,7 +52,6 @@
         }
 
 
-
         //Verifica se existe na tabela
 
         function verificar($usuario){
@@ -76,7 +59,7 @@
                 $conexao = new Conexao();
                 $cmd = $conexao->getConexao()->prepare("SELECT * FROM usuarios WHERE email = :e && senha = :s;");
                 $email = $usuario->getEmail();
-                $senha = hash("sha512",$usuario->getSenha());
+                $senha = hash("sha512", $usuario->getSenha());
                 $cmd->bindParam(":e", $email);
                 $cmd->bindParam(":s", $senha);
                 $cmd->execute();
@@ -129,6 +112,7 @@
         }
 
 
+        // Função para apagar sessões
         function sair(){
             try{
                 session_destroy();
@@ -141,6 +125,7 @@
         }
 
 
+        // Agendar consulta
         function agendar($agenda){
             try{
                 $con = new Conexao();   
@@ -172,6 +157,24 @@
                 echo "Erro geral: {$e->getMessage()}";
             }
         }
+
+        //Seleciona toda tabela
+
+        function agenda($idUser){
+            try{
+                $con = new Conexao();
+                $cmd = $con->getConexao()->prepare("SELECT * FROM agenda WHERE idUser=:iu;");
+                $cmd->bindParam("ui", $idUser);
+                $cmd->execute();
+                $resultado = $cmd->fetchAll(PDO::FETCH_ASSOC);
+                return $resultado;
+            }catch(PDOException $e){
+                echo "Erro no banco: {$e->getMessage()}";
+            }catch(Exception $e){
+                echo "Erro geral: {$e->getMessage()}";
+            }
+        }
+
 
     }
 ?>
