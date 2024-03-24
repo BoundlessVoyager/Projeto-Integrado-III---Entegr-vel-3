@@ -13,6 +13,12 @@ $(".del").click(function(){
     });
 });
 
+$(".btn-agendar-consulta").click(function(){
+    var medico = $(this).val(); // Pegue o valor aqui
+    window.location.href="formulario_medico.php?"+medico;
+        
+});
+
 $("#sair").click(function(){
     swal({
         title:"Logout",

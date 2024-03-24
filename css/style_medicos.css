@@ -242,6 +242,7 @@ body {
   width: 150px;
   height: 25px;
   font-size: 15px;
+  border-radius: 10px;
 }
 
 #texto-mais-informacoes-medico1, #texto-mais-informacoes-medico2, #texto-mais-informacoes-medico3 {

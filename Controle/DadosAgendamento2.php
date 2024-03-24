@@ -13,7 +13,7 @@
         
         $control = new ControleUsuario();
         if($control->agendar($agenda)){
-            header("Location: ../minhasConsultas.php");
+            header("Location: ../formulario_dadospessoais.php");
         }else{
             echo "<h1>Error</h1>";
         }

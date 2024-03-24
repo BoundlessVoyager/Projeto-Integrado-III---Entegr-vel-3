@@ -1,3 +1,6 @@
+<?php
+    require_once("Controle/DadosUsuario.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,13 +13,13 @@
     <header>
       <div class="container-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo Vitalis" />
+          <a href="index.php"><img src="img/logo.png" alt="Logo Vitalis" /></a>
           <h1 class="titulo-website">Vitalis</h1>
         </div>
 
         <div class="progress-bar">
           <div class="progress" id="progress">
-            <p id="stepText">1/3</p>
+            <p id="stepText">2/2</p>
           </div>
         </div>
       </div>
@@ -27,22 +30,21 @@
     </div>
 
     <div class="container">
-      <form class="container-form">
-        <span id="data">Dados Pessoais</span>
+      <form action="Controle/DadosAgendamento1.php" method="POST" class="container-form">
+        <span id="data">Confirmação dos Dados Pessoais</span>
 
         <div class="form">
-          <label for="">*Nome:</label>
+          <label for="">Nome completo:</label>
           <input
             type="text"
-            name=""
-            id=""
+            name="nome"
             class="size-input"
-            placeholder="Ex: Luiz"
+            value="<?php echo $dados["nome"]; ?>"
           />
         </div>
 
-        <div class="form">
-          <label for="">*Sobrenome:</label>
+        <!--<div class="form">
+          <label for="">Sobrenome:</label>
           <input
             type="text"
             name=""
@@ -50,68 +52,65 @@
             class="size-input"
             placeholder="Ex: Pereira"
           />
-        </div>
+        </div>-->
 
         <div class="form">
-          <label for="">*Data de nascimento:</label>
+          <label for="">Data de nascimento:</label>
           <input
             type="date"
-            name=""
+            name="data_de_nascimento"
             id=""
             class="size-input"
             placeholder="(dd/mm/aaaa)"
+            value="<?php echo $dados["data_de_nascimento"]; ?>"
           />
         </div>
 
         <div class="form">
-          <label for="">*Gênero:</label>
-          <select name="" id="">
+          <label for="">Gênero:</label>
+          <select name="genero" id="">
+            <option value=""></option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
           </select>
         </div>
 
         <div class="form">
-          <label for="">*Telefone:</label>
+          <label for="">Telefone:</label>
           <input
             type="tel"
-            name=""
+            name="telefone"
             id=""
             class="size-input"
-            placeholder="(ddd) (xxxxxxxxx)"
+            placeholder="(dd) (xxxxx-xxxx)"
+            value="<?php echo $dados["telefone"]; ?>"
           />
         </div>
 
         <div class="form">
-          <label for="">*E-mail:</label>
+          <label for="">E-mail:</label>
           <input
             type="email"
-            name=""
+            name="email"
             id=""
             class="size-input"
             placeholder="exemplo@gmail.com"
+            value="<?php echo $dados["email"]; ?>"
           />
           <p id="notification">
-            <input type="checkbox" name="" id="" />Receber notificação no email
+            <input type="checkbox" name="notificacao" />Receber notificação no email
           </p>
         </div>
+
+        <div class="buttons">
+          <!--<a href="formulario_medico.php?medico=<?php// echo $_SESSION['medico'];?>&especialidade=<?php// echo $_SESSION['especialidade'];?>" class="button" id="button-voltar">Voltar</a>-->
+
+          <input type="hidden" name="id" value="<?php echo $dados["idUser"]; ?>">
+          <input type='submit' class="button" id="button-prox" value="Próximo">
+        </div>
+
       </form>
     </div>
-
-    <div class="buttons">
-      <a href="">
-        <button class="button" id="button-canc">
-          Cancelar
-        </button>
-      </a>
-
-      <a href="/formulario_medico.html">
-        <button class="button" id="button-prox">
-          Próximo
-        </button>
-      </a>
-    </div>
-
 
   </body>
 </html>

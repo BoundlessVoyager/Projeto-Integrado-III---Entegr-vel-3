@@ -77,43 +77,27 @@
 
         <div class="medicos-terceira-parte">
             <div class="medico1">
-                
                 <img id="imagem-psicologa" src="./img/psicologa.png" alt="Psicóloga">
-
                 <p id="texto-nome-medico1">Dra. Camila Silva</p>
-
                 <p id="texto-especialidade-medico1">Psicóloga</p>
-                
-                <button id="btn-agendar-consulta1"> Agendar Consulta</button>
-
+                <button class="btn-agendar-consulta" id="btn-agendar-consulta1" value="medico=Dra. Camila Silva&especialidade=Psicologia"> Agendar Consulta</button>
                 <p id="texto-mais-informacoes-medico1"><a href=""> Mais informações</a></p>
-
             </div>
 
             <div class="medico2">
-
                 <img id="imagem-cardiologista" src="./img/cardiologista.png" alt="Cardiologista">
-
                 <p id="texto-nome-medico2">Dr. Lucas Mendes</p>
-
                 <p id="texto-especialidade-medico2">Cardiologista</p>
-                
-                <button id="btn-agendar-consulta2"> Agendar Consulta</button>
-
+                <button class="btn-agendar-consulta" id="btn-agendar-consulta2" value="medico=Dr. Lucas Mendes&especialidade=Cardiologia"> Agendar Consulta</button>
                 <p id="texto-mais-informacoes-medico2"><a href=""> Mais informações</a></p>
             </div>
 
             <div class="medico3">
                 <img id="imagem-dermatologista" src="./img/dermatologista.png" alt="Dermatologista">
-
                 <p id="texto-nome-medico3">Dra. Sofia Oliveira</p>
-
                 <p id="texto-especialidade-medico3">Dermatologista</p>
-                
-                <button id="btn-agendar-consulta3"> Agendar Consulta</button>
-
+                <button class="btn-agendar-consulta" id="btn-agendar-consulta3" value="medico=Dra. Sofia Oliveira&especialidade=Dermatologia"> Agendar Consulta</button>
                 <p id="texto-mais-informacoes-medico3"><a href=""> Mais informações</a></p>
-
             </div>
 
 
@@ -122,6 +106,8 @@
 
     </main>
 
-    
+<script src='js/jquery-3.4.1.min.js'></script>
+<script src='js/sweetAlert.js'></script>
+<script src='js/del.js'></script>
 </body>
 </html>

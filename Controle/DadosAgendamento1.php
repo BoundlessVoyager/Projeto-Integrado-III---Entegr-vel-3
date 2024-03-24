@@ -17,7 +17,7 @@
         $control = new ControleUsuario();
         if($control->atualizar($usuario)){
             $_SESSION['login'] = $_POST['email'];
-            header("Location: ../agendamento2.php");
+            header("Location: ../minhasConsultas.php");
         }else{
             echo "<h1>Error</h1>";
         }

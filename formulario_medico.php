@@ -1,5 +1,8 @@
+<?php
+    require_once("Controle/DadosUsuario.php");
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,13 +13,13 @@
     <header>
       <div class="container-header">
         <div class="logo">
-          <img src="../img/logo.png" alt="Logo Vitalis" />
+        <a href="index.php"><img src="img/logo.png" alt="Logo Vitalis" /></a>
           <h1 class="titulo-website">Vitalis</h1>
         </div>
 
         <div class="progress-bar">
           <div class="progress" id="progress">
-            <p id="stepText">2/3</p>
+            <p id="stepText">1/2</p>
           </div>
         </div>
       </div>
@@ -27,55 +30,55 @@
     </div>
 
     <div class="container">
-      <form class="container-form">
+      <form action="Controle/DadosAgendamento2.php" method="POST" class="container-form">
         <span id="data">Informações da consulta</span>
 
         <div class="form">
           <label for="">*Medico(a):</label>
-          <input type="text" name="" id="" class="size-input" placeholder="" />
+          <input type="text" name="medico" value="<?php if(isset($_GET['medico'])){ echo $_GET['medico']; }?>" class="size-input" required />
         </div>
 
         <div class="form">
           <label for="">*Especialidade:</label>
-          <input type="text" name="" id="" class="size-input" placeholder="" />
+          <input type="text" name="especialidade" value="<?php if(isset($_GET['especialidade'])){ echo $_GET['especialidade']; }?>" class="size-input" required />
         </div>
 
         <div class="form">
           <label for="">*Data da consulta:</label>
           <input
             type="date"
-            name=""
-            id=""
+            name="data_da_consulta"
             class="size-input"
             placeholder="(dd/mm/aaaa)"
+            required
           />
         </div>
 
         <div class="form">
           <label for="">*Forma de consulta:</label>
-          <select name="" id="">
+          <select name="forma_de_consulta">
             <option value="masculino">Presencial</option>
             <option value="feminino">Remota</option>
           </select>
         </div>
 
-        <div class="form">
+        <div class="form-motivo">
           <label for="">Motivo da consulta:</label>
-          <input type="text" name="" id="" class="size-input-motive" placeholder="" />
+          <input type="text" name="motivo" class="size-input-motive" placeholder="" />
+          
         </div>
+
+        <div class="buttons">
+          <a href="medicos.php" class="button" id="button-canc">Cancelar</a>
+
+          <input type="hidden" name="id" value="<?php echo $dados["idUser"]; ?>">
+          <input type='submit' class="button" id="button-prox" value="Próximo">
+        </div>
+
       </form>
     </div>
 
-    <div class="buttons">
-      <a href="">
-        <button class="button" id="button-canc">Cancelar</button>
-      </a>
-
-      <a href="">
-        <button class="button" id="button-voltar">Voltar</button>
-        <button class="button" id="button-prox">Próximo</button>
-      </a>
-    </div>
+    
 
   </body>
 </html>

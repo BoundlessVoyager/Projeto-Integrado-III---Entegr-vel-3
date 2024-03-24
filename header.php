@@ -7,7 +7,7 @@
 <header class="menu-principal">
         <div class="header-1">
             <div class="logo">
-                <img src="./img/logo.png" alt="Logo Vitalis">
+                <a href="index.php"><img src="img/logo.png" alt="Logo Vitalis" /></a>
                 <h1 class="titulo-website"> Vitalis </h1>
             </div>
                 
@@ -26,7 +26,7 @@
         if(!isset($_SESSION['login'])){
             echo "
             <div class='botao'>
-                <button onclick='fazerLogin()' class='btn'> Fazer Login </button>
+                <a href='login.php'><button class='btn'> Fazer Login </button></a>
             </div>
             ";
         }else{
