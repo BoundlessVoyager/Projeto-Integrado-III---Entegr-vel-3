@@ -13,6 +13,20 @@ $(".del").click(function(){
     });
 });
 
+$(".edit").click(function(){
+    var id = $(this).val(); // Pegue o valor aqui
+    swal({
+        title:"Atenção",
+        text:"Você deseja alterar sua consulta?",
+        buttons:['Cancelar','Sim'],
+        dangerMode:true
+    }).then(function(isConfirm){
+        if(isConfirm){
+            window.location.href="editConsulta.php?idAgenda="+id;
+        }
+    });
+});
+
 $(".btn-agendar-consulta").click(function(){
     var medico = $(this).val(); // Pegue o valor aqui
     window.location.href="formulario_medico.php?"+medico;

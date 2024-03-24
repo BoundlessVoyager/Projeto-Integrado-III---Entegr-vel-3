@@ -195,5 +195,37 @@
         }
 
 
+        // Atualizar dados da consulta
+        function atualizarConsulta($agenda){
+            try{
+                $con = new Conexao();   
+                $cmd = $con->getConexao()->prepare("UPDATE agenda SET medico = :md, especialidade = :e, data_da_consulta = :d, forma_de_consulta = :f, motivo = :mt WHERE idAgenda=:i;");
+                                                    
+                $id = $agenda->getId();
+                $medico = $agenda->getMedico();
+                $especialidade = $agenda->getEspecialidade();
+                $data_da_consulta = $agenda->getData_da_consulta();
+                $forma_de_consulta = $agenda->getForma_de_consulta();
+                $motivo = $agenda->getMotivo();
+
+                $cmd->bindParam("i", $id);
+                $cmd->bindParam("md", $medico);
+                $cmd->bindParam("e", $especialidade);
+                $cmd->bindParam("d", $data_da_consulta);
+                $cmd->bindParam("f", $forma_de_consulta);
+                $cmd->bindParam("mt", $motivo);
+                if($cmd->execute()){
+                    $con->fecharConexao();
+                    return true;
+                }else{
+                    $con->fecharConexao();
+                    return false;
+                }
+            }catch(PDOException $e){
+                echo "Erro no banco: {$e->getMessage()}";
+            }catch(Exception $e){
+                echo "Erro geral: {$e->getMessage()}";
+            }
+        }
     }
 ?>

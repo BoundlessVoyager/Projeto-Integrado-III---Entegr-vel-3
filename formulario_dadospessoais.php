@@ -68,7 +68,7 @@
 
         <div class="form">
           <label for="">Gênero:</label>
-          <select name="genero" id="">
+          <select name="genero" >
             <option value=""></option>
             <option value="masculino">Masculino</option>
             <option value="feminino">Feminino</option>
@@ -106,7 +106,7 @@
           <!--<a href="formulario_medico.php?medico=<?php// echo $_SESSION['medico'];?>&especialidade=<?php// echo $_SESSION['especialidade'];?>" class="button" id="button-voltar">Voltar</a>-->
 
           <input type="hidden" name="id" value="<?php echo $dados["idUser"]; ?>">
-          <input type='submit' class="button" id="button-prox" value="Próximo">
+          <input type='submit' class="button" id="button-prox" value="Concluir">
         </div>
 
       </form>

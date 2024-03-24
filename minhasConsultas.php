@@ -51,7 +51,7 @@
                 </div>
                 <div class='botoes-direita'>
                     <button class='del' value='{$agenda[$i]['idAgenda']}'>Cancelar Consulta</button>
-                    <button class='edit' value='{$agenda[$i]['idAgenda']}'>Editar Consulta</button>
+                    <button class='edit' value='{$i}'>Editar Consulta</button>
                 </div>";
             }
         }
