@@ -62,5 +62,25 @@
 <script src='js/jquery-3.4.1.min.js'></script>
 <script src='js/sweetAlert.js'></script>
 <script src='js/del.js'></script>
+
+<?php
+    if(isset($_SESSION['deletou'])){
+        echo "
+            <script>
+                swal({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Consulta cancelada com sucesso!',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            </script>
+        ";
+        echo "Algo aconteceu";
+        unset($_SESSION['deletou']);
+    }
+
+?>
+
 </body>
 </html>
