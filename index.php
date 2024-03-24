@@ -1,6 +1,3 @@
-<?php
-    session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -15,36 +12,9 @@
     <title> Vitalis </title>
 </head>
 <body>
-    <header class="menu-principal">
-            <div class="header-1">
-                <div class="logo">
-                    <img src="./img/logo.png" alt="Logo Vitalis">
-
-                    <h1 class="titulo-website"> Vitalis </h1>
-
-                </div>
-                
-                <div class="menu">
-                    <ul>
-                        <li><a href="./index.php" > Início </a></li>
-                        <li><a href="#apresentacao-quem-somos" > Quem somos </a></li>
-                        <li><a href="#apresentacao-contato" > Contato </a> </li>
-                        <li><a href="medicos.html" > Médicos </a></li>
-
-                    </ul>
-                </div>
-        <?php
-            if(!isset($_SESSION['login'])){
-                echo "
-                <div class='botao'>
-                    <button onclick='fazerLogin()' class='btn'> Fazer Login </button>
-                </div>
-                ";
-            }
-        ?>
-        
-            </div>
-    </header>
+    <?php
+        require_once('header.php');
+    ?>
 
     <main class="conteudo-principal">
         <div class="apresentacao-inicio">

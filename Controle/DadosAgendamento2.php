@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
 	require_once('Controle.php');
 	require_once('../Modelo/Agenda.php');
         

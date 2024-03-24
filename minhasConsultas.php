@@ -9,48 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/minhasconsultas.css">
 
     <title>Minhas Consultas</title>
 </head>
 <body>
-    <header class="menu-principal">
-        <div class="header-1">
-            <div class="logo">
-                <img src="./img/logo.png" alt="Logo Vitalis">
-                <h1 class="titulo-website"> Vitalis </h1>
-            </div>
-                
-            <div class="menu">
-                <ul>
-                    <li><a href="index.php" > Início </a></li>
-                    <li><a href="index.php#apresentacao-quem-somos" > Quem somos </a></li>
-                    <li><a href="index.php#apresentacao-contato" > Contato </a> </li>
-                    <li><a href="" > Médicos </a></li>
-                    <li><a href="" > Minhas consultas </a></li>
-                    
-                </ul>
-                
-            </div>
-        <?php
-            if(!isset($_SESSION['login'])){
-                echo "
-                <div class='botao'>
-                    <button onclick='fazerLogin()' class='btn'> Fazer Login </button>
-                </div>
-                ";
-            }
-        ?>
-            <input type="checkbox" default="false" name="perfil" id="perfil">
-            <label for="perfil">
-                <img id="user" src="img/perfil.png" alt="imagem de perfil">
-            </label>
-            <div class="perfil" id="sair">
-                Sair
-            </div>
-            
-        </div>
-    </header>
+    <?php
+        require_once('header.php');
+    ?>
     
     <main class="consultas-main">
         <div class="consultas-externo">
@@ -95,8 +60,4 @@
     </main>
 
 </body>
-<script src='js/jquery-3.4.1.min.js'></script>
-<script src='js/sweetAlert.js'></script>
-<script src='js/del.js'></script>
-<!--<script>swal('Atenção','Apagou!','warning');</script>-->
 </html>
