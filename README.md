@@ -1,9 +1,6 @@
 # Entregável 3 (Website) - Disciplina de Projeto Integrado III do Curso de Análise e Desenvolvimento de Sistemas
-Nota 1: Lincensa?
 
 # Sobre o projeto
-
-Nota 2: Inserir aqui o link do website funcionando?
 
 O projeto envolve a aplicação dos conhecimentos abordados na disciplina de Desenvolvimento para Web para integralização com a disciplina de Projeto Integrado III como requisito de obtenção de nota. 
 Este projeto é dado como um Minímo Produto Viável (MVP) e visa a concepção de um website que sustente as funcionalidades presentes em um CRUD. Contudo, utilizando em sua maioria o Front-end para desenvolvimento. 
