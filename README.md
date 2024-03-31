@@ -26,5 +26,4 @@ Nota 3: Inserir aqui as imagens do layout web.
 # Autores
 Emanuel Cicero Moreira de Lima - 2022012075 \
 José Alexandre Delmondes Araújo - 2022010535 \
-Emanuel Soares dos Santos - 2022009857 \
-Diego Gouveia de Sousa -  2022011953
+Emanuel Soares dos Santos - 2022009857
