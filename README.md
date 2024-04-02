@@ -23,8 +23,6 @@ A aplicação consiste em uma simulação de um sistema CRUD para agendamentos d
 - CSS
 - Javascript
 
-## Implantação em Produção
-
 # Como executar o projeto
 -Caso não tenha o [XAMPP](https://www.apachefriends.org/pt_br/index.html) instalado, faça o download e instale em sua máquina.\
 -Após a instalação do XAMPP, localize a pasta onde foi instalado e abra a pasta /htdocs.\
