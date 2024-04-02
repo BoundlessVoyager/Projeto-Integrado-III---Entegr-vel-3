@@ -22,7 +22,7 @@ Nota 3: Inserir aqui as imagens do layout web.
 ## Implantação em Produção
 
 # Como executar o projeto
-- Caso não tenha o [XAMPP](https://www.apachefriends.org/pt_br/index.html) instalado, faça o download e instale em sua máquina.\
+-Caso não tenha o [XAMPP](https://www.apachefriends.org/pt_br/index.html) instalado, faça o download e instale em sua máquina.\
 -Após a instalação do XAMPP, localize a pasta onde foi instalado e abra a pasta /htdocs.\
 -Dentro da pasta /htdocs, crie uma nova pasta com o nome "projetos" ou um nome de sua preferência.\
 -Com a pasta "projetos" aberta no terminal, execute o seguinte comando: git clone https://github.com/BoundlessVoyager/Projeto-Integrado-III---Entegr-vel-3.git.\
