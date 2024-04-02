@@ -8,11 +8,11 @@ Este projeto é dado como um Minímo Produto Viável (MVP) e visa a concepção 
 A aplicação consiste em uma simulação de um sistema CRUD para agendamentos de uma clínica fictícia.
 
 # Layout web
-##Tela Home
+## Tela Home
 ![Tela home](img/home.png)
-##Tela Formulário
+## Tela Formulário
 ![Tela Formulário](img/formulatio_de_agendamento.png)
-##Tela Minhas Consultas
+## Tela Minhas Consultas
 ![Tela Minhas Consultas](img/minhas_consultas.png)
 
 # Tecnologias utilizadas
