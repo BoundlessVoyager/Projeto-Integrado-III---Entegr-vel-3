@@ -29,7 +29,7 @@
                             unset($_SESSION['login']);
                         }
                     ?>
-                    <button class="button-form">Registre-se</button>
+                    <button class="button-form">Entrar</button>
                 </div>
                 <a href="#">Esqueci minha senha</a>
             </form>
