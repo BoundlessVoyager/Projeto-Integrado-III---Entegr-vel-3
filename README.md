@@ -9,7 +9,9 @@ A aplicação consiste em uma simulação de um sistema CRUD para agendamentos d
 
 # Layout web
 
-Nota 3: Inserir aqui as imagens do layout web.
+![Tela home](img/home.png)
+![Tela Formulário](img/formulatio_de_agendamento.png)
+![Tela Minhas Consultas](img/minhas_consultas.png)
 
 # Tecnologias utilizadas
 ## Back-end
