@@ -22,17 +22,16 @@ Nota 3: Inserir aqui as imagens do layout web.
 ## Implantação em Produção
 
 # Como executar o projeto
-```
-- Caso não tenha o [XAMPP](https://www.apachefriends.org/pt_br/index.html) instalado, faça o download e instale em sua máquina.
--Após a instalação do XAMPP, localize a pasta onde foi instalado e abra a pasta /htdocs.
--Dentro da pasta /htdocs, crie uma nova pasta com o nome "projetos" ou um nome de sua preferência.
--Com a pasta "projetos" aberta no terminal, execute o seguinte comando: git clone https://github.com/BoundlessVoyager/Projeto-Integrado-III---Entegr-vel-3.git.
--Abra o XAMPP e inicie os módulos Apache e MySQL.
--No navegador, acesse http://localhost/phpmyadmin/ ou clique em "Admin" no módulo MySQL para ser direcionado diretamente para a página.
--Na página aberta, localize a opção "Importar" na barra superior.
--Na seção de importação, selecione o arquivo "consulta.sql" que está localizado em: pasta onde o XAMPP está instalado/htdocs/projetos/consultorio.sql.
+- Caso não tenha o [XAMPP](https://www.apachefriends.org/pt_br/index.html) instalado, faça o download e instale em sua máquina.\
+-Após a instalação do XAMPP, localize a pasta onde foi instalado e abra a pasta /htdocs.\
+-Dentro da pasta /htdocs, crie uma nova pasta com o nome "projetos" ou um nome de sua preferência.\
+-Com a pasta "projetos" aberta no terminal, execute o seguinte comando: git clone https://github.com/BoundlessVoyager/Projeto-Integrado-III---Entegr-vel-3.git.\
+-Abra o XAMPP e inicie os módulos Apache e MySQL.\
+-No navegador, acesse http://localhost/phpmyadmin/ ou clique em "Admin" no módulo MySQL para ser direcionado diretamente para a página.\
+-Na página aberta, localize a opção "Importar" na barra superior.\
+-Na seção de importação, selecione o arquivo "consulta.sql" que está localizado em: pasta onde o XAMPP está instalado/htdocs/projetos/consultorio.sql.\
 -Por fim, acesse http://localhost/projetos para ter acesso à aplicação.
-```
+
 
 # Autores
 Emanuel Cicero Moreira de Lima - 2022012075 \
